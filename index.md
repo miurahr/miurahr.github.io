@@ -11,3 +11,4 @@ tagline: Supporting tagline
   {% endfor %}
 </ul>
 
+<a href="/slides/slides.html"> Presentations </a>
