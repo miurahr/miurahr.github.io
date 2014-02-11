@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>オープン地理データ OpenStreetMap</h1>
+
+<p>一般社団法人オープンストリートマップ・ファウンデーション・ジャパン </p>
+
+<p>代表理事 </p>
+
+<p>三浦広志 </p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>オープンストリートマップ(OSM)って何？</h2>
+
+<ul>
+<li>フリーなWiki地図　作成プロジェクト</li>
+<li>世界的 伊能忠敬　プロジェクト</li>
+<li>オープン地理データ　作成プロジェクト</li>
+<li>オープン地理データをベースとしたイノベーション</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>ライセンス：ODbL </h2>
+
+<p><image src="img/odbl_you_are_free.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h1>データベースとしてのOSM</h1>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>データ量は膨大かつ成長中</h2>
+
+<p>地上に存在する「あらゆるモノ」の、空間的な位置を主キーとしたDB</p>
+
+<ul>
+<li>17,000,000,000のモノ情報が格納されている。</li>
+</ul>
+
+<p><img src="img/Osmdbstats2.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>Way</h2>
+
+<ul>
+<li>180,000,000 の道路などの情報が格納されている </li>
+</ul>
+
+<p><img src="img/Osmdbstats2Ways.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h1>例</h1>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>鶴ケ城</h2>
+
+<p><img src="img/tsurugajo/tsurugajo_map.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>データ抽出</h2>
+
+<p><img src="img/tsurugajo/tsurugajo_data.png"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>データ内容</h2>
+
+<p><img src="img/tsurugajo/tsurajo_jinja_datum.png" width="1000" /></p>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>TDL</h2>
+
+<p><img src="img/tdl2013.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>golf</h2>
+
+<p><img src="img/golfclub.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h1>利用</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>背景図以外での利用を</h2>
+
+<ul>
+<li>ボランティア（マッパー）が作成した地理データ（データベースの中身）を利用できます。</li>
+<li>地理データベースへ APIを通じてクエリーできます。</li>
+<li>LOD化されています。</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>LinkedgeoData</h2>
+
+<p><img src="img/linkedGeodata.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="5300">
+<h2>世界中　100万人 で作成中</h2>
+
+<!-- data-x="5300"--><!-- data-y="5300" --><!-- data-z="1500" --><!-- data-rotate="150" -->
+
+<p><video id="video" src="movie/116273622.ogv" poster="img/video_cover.png" controls width="1000"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>最後に</h2>
+
+<p>OSS的なDBデータそのものを提供しています。</p>
+
+<p>OpenStreetMap </p>
+
+<p>http://OSM.org/  </p>
+
+<p>http://OSM.jp/</p>
+
+<p>OSMFJ Hiroshi Miura  (miurahr@osmf.jp)</p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

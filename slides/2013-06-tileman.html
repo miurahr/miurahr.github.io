@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>TileMan: Nginx+Tirex new infrastructure for Tile Service</h1>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>Agenda</h2>
+
+<ul>
+<li><p>OpenResty: New http and application server</p></li>
+<li><p>Tirex: New age of tile service manager</p></li>
+<li><p>TileMan: Tirex frontend and more</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>OpenResty: At glance</h2>
+
+<p>OpenResty effectively turns the nginx server into a powerful web app server</p>
+
+<ul>
+<li><p>full-fledged web application server </p></li>
+<li><p>bundling the standard Nginx core</p></li>
+<li><p>lots of 3rd-party Nginx modules</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>OpenResty: Web Developers view</h2>
+
+<p>scripting web application server</p>
+
+<ul>
+<li><p>the Lua programming language to script</p></li>
+<li><p>control various nginx C modules and Lua modules</p></li>
+<li><p>construct extremely high-performance web applications </p></li>
+<li><p>capable to handle 10K+ connections</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>OpenResty: Architecture</h2>
+
+<p>Runs server-side web app completely in the Nginx server</p>
+
+<ul>
+<li><p>leveraging Nginx's event model to do non-blocking I/O</p></li>
+<li><p>with remote backends; MySQL, PostgreSQL, Memcached, and Redis.</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>Tirex: at glance</h2>
+
+<p>Tirex: pronounce "Ti-rex" that is tile manager</p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

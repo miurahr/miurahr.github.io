@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>Scripting Nginx with LUA</h1>
+
+<p>Hiroshi Miura @miurahr</p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h1>Nginx</h1>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>Nginx</h2>
+
+<p>nginx.org</p>
+
+<ul>
+<li><p>High performance </p></li>
+<li><p>Asynchronous architecture, event driven</p></li>
+<li><p>Low memory foot print</p></li>
+<li><p>Declarative configuration syntax</p></li>
+<li><p>Extesible architecture with module</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>OpenResty</h2>
+
+<p>OpenResty.org</p>
+
+<ul>
+<li><p>OpenResty: Nginx + module collection</p></li>
+<li><p>Non-Blocking I/O with Nginx and modules</p></li>
+<li><p>memcached</p></li>
+<li><p>redis</p></li>
+<li><p>PostgreSQL</p></li>
+<li><p>MySQL</p></li>
+<li><p>Lua embeded scripting engine as nginx module.</p></li>
+<li><p>Collection of Lua resty libraries</p></li>
+<li><p>In production on Alibaba group, world largest EC site.</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>Nginx Config(1)</h2>
+
+<pre><code>  server {
+listen 80;
+listen [::]:80 default_server;
+
+root /usr/share/nginx/html;
+index index.html index.htm;
+
+server_name localhost;
+</code></pre>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>Nginx Config(2)</h2>
+
+<pre><code>location / {
+    # First attempt to serve request as file, then
+    # as directory, then fall back to displaying a 404.
+    try_files $uri $uri/ /index.html;
+}
+
+location /doc/ {
+    alias /usr/share/doc/;
+    autoindex on;
+    allow 127.0.0.1;
+    deny all;
+}
+</code></pre>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>Non blocking I/O with Nginx</h2>
+
+<p>Use memcached with nginx and module.</p>
+
+<pre><code>  location /memcached {
+    set $memc_cmd $arg_cmd;
+    set $memc_key $arg_key;
+    set $memc_value $arg_val;
+    set $memc_exptime $arg_exptime;
+    memc_pass 127.0.0.1:11211;
+  }
+</code></pre>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h1>Lua</h1>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>Lua</h2>
+
+<p>lua.org</p>
+
+<ul>
+<li><p>Scripting language born in Brazil in 1992</p></li>
+<li><p>Combines simple procedural syntax with powerful data description</p>
+
+<ul>
+<li><p>Dynamic variable type</p></li>
+<li><p>Register-based virtual machine</p></li>
+<li><p>Automatic memory management</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>Lua</h2>
+
+<ul>
+<li>"Lua" (pronounced LOO-ah) means "Moon" in Portuguese</li>
+</ul>
+
+<p><img src="img/lua_320.jpg"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>Why Lua </h2>
+
+<ul>
+<li><p>Lua is a proven, robust language</p></li>
+<li><p>Lua is fast</p></li>
+<li><p>Lua is portable</p></li>
+<li><p>Lua is embeddable</p></li>
+<li><p>Lua is powerful</p></li>
+<li><p>Lua is small</p></li>
+<li><p>Lua is free</p></li>
+<li><p>Lua loves Games</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>Lua Nginx Module</h2>
+
+<ul>
+<li><p>Provide directives to run Lua scripts during Nginx processes</p>
+
+<ul>
+<li>Rewrite phase</li>
+<li>Access phase</li>
+<li>Content phase</li>
+<li>Log phase</li>
+</ul></li>
+<li><p>Access Nginx environment from Lua scripts</p></li>
+<li><p>Very fast as Nginx does</p></li>
+<li><p>Faster with Lua JIT</p></li>
+<li><p>github.com/chaoslawful/lua-nginx-module</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>Hello, Lua</h2>
+
+<pre><code>location /hellolua {
+    default_type 'text/plain';
+
+    content_by_lua '
+       local name = ngx.var.arg_name or "Anonymous"
+        ngx.say("Hello, ", name, "!")
+    ';
+}
+
+$ curl http://localhost/hellolua?name=Lua
+Hello, Lua! 
+</code></pre>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>Load Lua files</h2>
+
+<p>Modules are loaded once, on the first request</p>
+
+<pre><code>location /lua {
+    rewrite_by_lua_file /path/to/rewrite.lua;
+    access_by_lua_file /path/to/access.lua;
+    content_by_lua_file /path/to/content.lua;
+}
+</code></pre>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>Lua Nginx API</h2>
+
+<ul>
+<li><p>Coroutine to integrate with nginx reactor</p></li>
+<li><p>Synchronous interface to access non-blocking I/O API.</p>
+
+<ul>
+<li>Access HTTP request</li>
+<li>Compose HTTP response</li>
+<li>Perfome sub-request to locations</li>
+<li>Connect to other (upstream) network services</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h1>CoSocket</h1>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>Non-blocking networking I/O with "Cosocket"</h2>
+
+<ul>
+<li><p>Send and recieve TCP/UDP on Inet/Unix domain socket.</p></li>
+<li><p>Compatible with Lua socket API</p></li>
+<li><p>Keepalive mechanism to pool connections</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>Cosocket example</h2>
+
+<pre><code>location /memcached {
+    content_by_lua '
+        local sock = ngx.socket.connect("127.0.0.1", 11211)
+        sock:send("SET foo bar 3600\r\n")
+        local line = sock:receive()
+        if line then
+            ngx.say(line)
+        end
+        sock:setkeepalive()    ';
+}
+
+$ curl http://localhost/memcached
+STORED
+</code></pre>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h1>Synchnonization support</h1>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>context data</h2>
+
+<p>Per-request context data = Lua table to store data duraring request lifetime</p>
+
+<pre><code> location /ctx {
+  access_by_lua '
+    ngx.ctx.userid = 'abcde'
+  ';
+  content_by_lua '
+    ngx.say(ngx.ctx.userid)
+  ';
+ }
+ $ curl http://localhost/ctx
+abcde
+</code></pre>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>Shared dictionary</h2>
+
+<p>Global hash table across all requests</p>
+
+<pre><code>http {
+    lua_shared_dict stats 10m;
+    server {
+        location / {
+            content_by_lua '
+               ngx.shared.stats:incr("hits", 1)
+               ngx.say(ngx.shared.stats:get("hits"))
+            ';
+        }
+    }
+}
+</code></pre>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>Lua-resty-* family</h2>
+
+<ul>
+<li><p>OpenResty bundles Lua modules selection</p></li>
+<li><p>Providing APIs for popular services</p>
+
+<ul>
+<li>lua-resty-memcached</li>
+<li>lua-resty-redis</li>
+<li>lua-resty-mysql</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>lua-resty-memcached</h2>
+
+<pre><code>location /memcached {
+    content_by_lua '
+        local memcached = require "resty.memcached"
+        local memc = memcached:new()
+        local ok, err = memc:connect("127.0.0.1", 11211)
+
+        local ok, err = memc:set("foo", "bar", 3600)
+        if ok then
+            ngx.say("STORED")
+        end
+
+        memc:set_keepalive()    ';
+}
+</code></pre>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>Use Case</h2>
+
+<ul>
+<li><p>URL shorten service</p></li>
+<li><p>RESTful API services</p></li>
+<li><p>API translation and authentication service</p></li>
+<li><p>Caching improvement</p></li>
+<li><p>A/B testing</p></li>
+<li><p>Inteligent content delivery </p></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="4800">
+<h2>Use Case</h2>
+
+<p>Build Tile serving service - TileMan</p>
+
+<p><img src="img/tileman_ext_config.png"/></p>
+
+</div>
+<div class="step" data-y="4000" data-x="0">
+<h2>Credit</h2>
+
+<ul>
+<li><p>OpenResty is maintained by agentzh, chaoslawful etc.</p></li>
+<li><p>I borrowed some example and ideas from @agentzh, James Hurst @pintsized.</p></li>
+<li><p>This presentation is written by Markdown2Impress.</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4000" data-x="1200">
+<h1>Questions?</h1>
+
+</div>
+<div data-z="-100" class="step" data-y="0" data-x="-150">
+<h2>introduction to OpenResty</h2>
+
+<p><!-- data-x=-150 -->
+<!-- data-y=0 -->
+<!-- data-z=-100 -->
+<img src="img/lua_1024.jpg"/></p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

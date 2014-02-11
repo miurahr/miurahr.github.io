@@ -1,0 +1,636 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>OpenStreetMapのWeb Site活用法</h1>
+
+<p>一般社団法人オープンストリートマップ・ファウンデーション・ジャパン</p>
+
+<p>代表理事　三浦　広志</p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>アジェンダ</h2>
+
+<ul>
+<li><p>Getting Started </p></li>
+<li><p>前提環境</p></li>
+<li><p>WordPressでOSM</p></li>
+<li><p>DrupalでOSM</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h1>Getting Started</h1>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>本セッションでは</h2>
+
+<p>本セッションでは、ハンズオンスタイルで、ブロク上に地図を統合する方法を学びます。
+Amazon Web Service上に実現することを前提にします。</p>
+
+<p>また、本プレゼンは、</p>
+
+<p>http://miurahr.github.com/osc_tokyo_2013spring/</p>
+
+<p>でアクセス可能です。</p>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>OpenStreetMap</h2>
+
+<p>「OpenStreetMapは道路地図などの地理情報データを誰でも利用できるよう、フリーの地理情報データを作成することを目的としたプロジェクト」(wiki.osm.orgより)</p>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>なぜOSMか？</h2>
+
+<p>「自由に使えると思っている地図の多くが実は法的・技術的に問題があり、人々がクリエイティブに、生産的に、あるいは今まで予期しなかった方法でそれを利用する事を妨げている」(wiki.osm.orgより)</p>
+
+<ul>
+<li>地図データには著作権がある</li>
+<li>ベクターデータを自由には使えない</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>そもそもOSMとは？</h2>
+
+<ul>
+<li>Wiki的に誰もが自由に書き換えることのできる地図データ</li>
+<li>「みんなが持っているGPSログデータを重ね合わせると地図になるんじゃね？」という発想</li>
+<li>それぞれが持っているロケーション知識も使えるよね</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>地図作成の原動力</h2>
+
+<ul>
+<li>なぜ、地図を作るのか？</li>
+<li><p>既存オンライン地図で足りないものがある</p>
+
+<ul>
+<li>自由に使える地図がほしい！</li>
+</ul></li>
+<li><p>著作権</p></li>
+<li>最新の道路情報がほしい！
+<ul>
+<li>道路状態は日々変化している</li>
+<li>工事中だったり</li>
+<li>先の震災では道路状態は大きく変わった！</li>
+</ul></li>
+<li>ベクターデータがほしい！
+<ul>
+<li>いろいろ計測できる？</li>
+<li>カーナビが作れる？</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2> OSMの仕組み</h2>
+
+<ul>
+<li>地図作成ユーザがデータを持ち寄ってOSMサーバに登録
+<ul>
+<li>地図エディタを利用</li>
+<li>オンライン／オフラインエディタ</li>
+</ul></li>
+<li>OSMサーバは
+<ul>
+<li>データを元にレンダリングして画像地図を提供</li>
+<li>Webから</li>
+<li>スマートフォンから</li>
+<li>ベクターデータも取り出せる</li>
+<li>Web地図から部分的に取得</li>
+<li>エディタから部分的に取得</li>
+<li>地図のベクタデータをまるごとダウンロード</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h1>では、使ってみましょう。</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>前提環境</h2>
+
+<p>本説明では、Amazon Webサービスにサーバ運営をするという条件で、記載されているが、AWSをおすすめするものではない。
+また、サーバイメージには、オールインワンのサーバイメージを提供するBITNAMI http://bitnami.org/ を想定してます。
+すべて自分でインストール等を行うこともできますし、オンプレミスの環境を構築することもできますが、サーバ環境の準備については範疇外とします。</p>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h1>WordPressでマップ</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>アプリ・イメージ検索・インスタンス起動</h2>
+
+<p>AWSのインスタンス起動で、次のイメージを選択し、起動します。</p>
+
+<pre><code>AMI ID: ami-ad0580ac
+AMI Name: bitnami-wordpress-3.5.1-0-linux-ubuntu-12.04.1-x86_64-ebs
+</code></pre>
+
+<p><img src="img/ec2_ami_wp_select.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>補足</h2>
+
+<p>これと同等のWindows用、MacOSX用、Linux用のイメージも入手可能ですので、詳細は、bitnamiのホームページを参照ください。</p>
+
+<ul>
+<li>例
+http://wiki.bitnami.org/Applications/BitNami_Wordpress</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>sshログイン/terminalアクセス</h2>
+
+<pre><code>$ ssh -i aws.pem -l bitnami  ec2-xx-xxx-xxx-xxx.ap-northeast-1.compute.amazonaws.com 
+Welcome to Ubuntu 12.04.1 LTS (GNU/Linux 3.2.0-36-virtual x86_64) 
+       ___ _ _   _  _            _  
+      | _ |_) |_| \| |__ _ _ __ (_) 
+      | _ \ |  _| .` / _` | '  \| | 
+      |___/_|\__|_|\_\__,_|_|_|_|_| 
+
+  *** Welcome to the BitNami WordPress 3.5.1-0 *** 
+  *** BitNami Wiki:   http://wiki.bitnami.org/ *** 
+  *** BitNami Forums: http://answers.bitnami.org/ *** 
+</code></pre>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>bitnamiデフォルト設定変更</h2>
+
+<p>URLを変更して、 http://DOMAINNAME/ でアクセスできるようにする。</p>
+
+<pre><code>＄sudo /opt/bitnami/apps/wordpress/updateip --appurl /
+$ mkdir /opt/bitnami/apps/wordpress/htdocs/wp-content/uploads 
+</code></pre>
+
+<p>これによって次のようなページを見ることが出来ました。</p>
+
+<p><img src="img/wp_default_page.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>地図表示付きブログをWordpressに実現</h2>
+
+<p>続いて、OSMのプラグインを導入して行きましょう。</p>
+
+<p>サイトに User: user  Password: bitnami で入ります。</p>
+
+<p><img src="img/wp_login.png"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>プラグイン</h2>
+
+<p>今回使用するプラグインは、こちらです。</p>
+
+<pre><code>http://wordpress.org/extend/plugins/osm/
+</code></pre>
+
+<p><img src="img/wp_osm_plugin_page.png" height="400" /></p>
+
+<p>インストール後、設定”OSM”を選択して、設定して行きましょう。</p>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>プラグイン追加</h2>
+
+<p><img src="img/wp_add_plugin.png" /></p>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>インストールの様子</h2>
+
+<p><img src="img/wp_install_plugins.png" /></p>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>インストール</h2>
+
+<p><img src="img/wp_osm_installing_plugin.png" /></p>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>あなたの投稿/ページに、地図を追加する方法</h2>
+
+<ol>
+<li>（必要なら）マーカーを選択する</li>
+<li>（必要なら）GPXファイルや、マーカーファイルを追加する。</li>
+<li>（必要なら）地図の枠線や他のコントロールを追加する</li>
+<li>マップをクリックし、ショートコードを生成する。（マーカーを選んでいれば、クリックした場所に置かれる）</li>
+<li>ショートコードをマップの下からコピーして、投稿へ追加する。</li>
+<li>もし、すべてのOSMマップを有効にしたいならば、argument-typeを削除</li>
+<li>他の属性を追加する。トラック、ポイントなど。または、地図のサイズを変更する。</li>
+<li>個人情報をuploadフォルダだけでなく、plugins/osmフォルダーに保存しないこと！</li>
+</ol>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>設定：アイコン</h2>
+
+<p>アイコンの設定部分です。ブログ記事の地図で、ロケーションを示す
+ピンの代わりに、アイコンを使えます。</p>
+
+<p><img src="img/wp_osm_marker.png" /></p>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>設定：GPX</h2>
+
+<p><img src="img/wp_osm_setup_gpx.png" height="600" /></p>
+
+</div>
+<div class="step" data-y="3200" data-x="4800">
+<h2>設定:ズームレベル</h2>
+
+<p><img src="img/Screenshot_from_2013-02-09 23:23:07.png" height="600" /></p>
+
+</div>
+<div class="step" data-y="4000" data-x="0">
+<h2>文字列生成</h2>
+
+<p>例えば、次のような文字列が生成される。</p>
+
+<pre><code>[osm_map lat="35.367" long="139.465" zoom="14" width="600" height="450" marker="35.363,139.466" marker_name="wpttemp-green.png" control="scaleline" m_txt_01="ほげほげ" m_txt_02="ふがふが" m_txt_03="" m_txt_04="" theme="ol" type="Mapnik"]
+</code></pre>
+
+<p>これを、ブログ投稿に貼り付けるだけです。</p>
+
+</div>
+<div class="step" data-y="4000" data-x="1200">
+<h2>DONE!</h2>
+
+<p><img src="img/Screenshot_from_2013-02-09 23:26:33.png" height="600" /></p>
+
+</div>
+<div class="step" data-y="4000" data-x="2400">
+<h2>GPX表示</h2>
+
+<p>GPSトラッカーや、iPhone/AndroidのGPSとアプリで、自転車での遠出の経路を載せることもできます。</p>
+
+<p><img src="img/Screenshot_from_2013-02-09 23:49:16.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="4000" data-x="3600">
+<h1>DrupalでOSM利用</h1>
+
+</div>
+<div class="step" data-y="4000" data-x="4800">
+<h2>アプリ・イメージ検索・インスタンス起動</h2>
+
+<p>Drupalには、次のAWSのイメージを使います。
+    AMI ID: ami-cdfd78cc
+    AMI Name: bitnami-drupal-7.19-0-linux-ubuntu-12.04.1-x86_64-ebs</p>
+
+<p><img src="img/ec2_drupal_select.png" height="400" /></p>
+
+</div>
+<div class="step" data-y="4800" data-x="0">
+<h2>ログイン</h2>
+
+<p>起動してブラウザーで開くとこんなページが開きます。</p>
+
+<p>アクセスMyアプリケーションを選ぶと、ログインできます。
+Wordpressと同様、 id: user password: bitnamiでログインしましょう。</p>
+
+<p><img src="img/Screenshot_from_2013-02-09 23:57:35.png" height="400" /></p>
+
+</div>
+<div class="step" data-y="4800" data-x="1200">
+<h2>Drupalモジュール　</h2>
+
+<p>今回は、 OpenLayersモジュールを使用します。さらに記事に地図をつけるために、GeoField, GeoPHPモジュールも使用します。</p>
+
+</div>
+<div class="step" data-y="4800" data-x="2400">
+<h2>モジュール導入</h2>
+
+<p>maoduleの設定を開きます。
+新規モジュールインストールを選択し、openlayers モジュールを導入しましょう。</p>
+
+<p><img src="img/Screenshot_from_2013-02-09 23:59:27.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="4800" data-x="3600">
+<h2>導入URL</h2>
+
+<p>INSTALL　URL(入手元)には、</p>
+
+<pre><code>http://ftp.drupal.org/files/projects/openlayers-7.x-2.0-beta3.tar.gz
+</code></pre>
+
+<p>を入れます。
+Installボタンをおし導入後、有効化してしまいましょう。
+同様に、GeoField, GeoPHPモジュールを導入します。</p>
+
+<pre><code>http://ftp.drupal.org/files/projects/geophp-7.x-1.7.tar.gz
+http://ftp.drupal.org/files/projects/geofield-7.x-1.1.tar.gz
+</code></pre>
+
+<p>サーバにSSHログインして、geoPHPライブラリを追加します。FTPで実施しても構いません。</p>
+
+</div>
+<div class="step" data-y="4800" data-x="4800">
+<h2>geoPHPライブラリの追加</h2>
+
+<pre><code>bitnami:~$ mkdir /opt/bitnami/apps/drupal/htdocs/sites/all/libraries 
+bitnami:~$ wget https://github.com/downloads/phayes/geoPHP/geoPHP.tar.gz 
+
+2013-02-10 01:16:11 (16.2 MB/s) - `geoPHP.tar.gz' saved
+
+bitnami:~$ cd /opt/bitnami/apps/drupal/htdocs/sites/all/libraries 
+bitnami:$ tar xf ~/geoPHP.tar.gz 
+</code></pre>
+
+</div>
+<div class="step" data-y="5600" data-x="0">
+<h2>OpenLayersモジュールの有効化</h2>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:05:46.png" /></p>
+
+</div>
+<div class="step" data-y="5600" data-x="1200">
+<h2>OpenLayers設定</h2>
+
+<p>設定の「Structure」-「OpenLayers」を選択します。
+MAPSタブを選択します。今回は、example_osmをクローンして利用します。</p>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:07:43.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="5600" data-x="2400">
+<h2>MAP設定</h2>
+
+<p>Editボタンの矢印をクリックすると”Clone”が選択できます。
+Mapスタイルの編集画面に入り
+Layers&amp;Stylesを選択します。</p>
+
+<p><img src="img/drupal_layers_and_styles.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="5600" data-x="3600">
+<h2>Overlay設定</h2>
+
+<p>スクロールダウンすると、オーバーレイの設定があります。Geofieldフォーマッターの欄を有効にします。</p>
+
+<p><img src="img/Screenshot_from_2013-02-10 01:01:31.png" height="200"/></p>
+
+</div>
+<div class="step" data-y="5600" data-x="4800">
+<h2>デフォルトマップの設定</h2>
+
+<p>“Settings”タブで、既定で使用するマップを選びます。</p>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:08:43.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="6400" data-x="0">
+<h2>コンテンツタイプを編集</h2>
+
+<p>記事にOSMのマップで表示するロケーションをもたせます。</p>
+
+<p>今回の手順は、以下のDrupal　OpenLayersモジュールハンドブックに基づきます。</p>
+
+<pre><code>http://drupal.org/node/1481374
+</code></pre>
+
+</div>
+<div class="step" data-y="6400" data-x="1200">
+<h2>(1)Geofield データをノードに追加する</h2>
+
+<p>ノードに緯度経度データが保存できるフィールドを追加します。</p>
+
+<p>”Structure”ー”Contents Types”を選択
+コンテンツタイプ”Article”に地図を追加します。</p>
+
+</div>
+<div class="step" data-y="6400" data-x="2400">
+<h2>GeoField</h2>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:52:02.png" height="400" /></p>
+
+</div>
+<div class="step" data-y="6400" data-x="3600">
+<h2>追加</h2>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:29:26.png"  /></p>
+
+<p>フィールド追加に
+”Geo”, “GeoField”, “OpenStreetMap　Map”を選択します。
+保存し、次の画面も規定値で、保存してください。
+これで、地理的な位置を入力できるようになりました。</p>
+
+</div>
+<div class="step" data-y="6400" data-x="4800">
+<h2>”MANAGE DISPLAY”で地図表示の設定</h2>
+
+<p><img src="img/Screenshot_from_2013-02-10 01:07:20.png" height="400"/></p>
+
+<p>ここでは、先程追加したgeoフィールドの表示について、デフォルトのWKTを”OpenLayers”に変えます。</p>
+
+</div>
+<div class="step" data-y="7200" data-x="0">
+<h2>新規コンテンツ追加</h2>
+
+<p>新規コンテンツ追加を選ぶと、編集画面中に、地図を見ることができます。
+右上の鉛筆のアイコンを使って、位置を示すことができます。</p>
+
+<p><img src="img/Screenshot_from_2013-02-10 00:54:13.png" /></p>
+
+<p>これで、コンテンツに地図を貼り付けることが出来ました。</p>
+
+</div>
+<div class="step" data-y="7200" data-x="1200">
+<h2>Drupalの特長</h2>
+
+<p>Drupalでは、処理が複雑でしたが、WordPressに比べ、複雑な処理や様々なサービスを使えるようになっています。ブログだけではなく、地図上に管理するシステムのフレームワークとして利用可能な作りになっています。</p>
+
+</div>
+<div class="step" data-y="7200" data-x="2400">
+<h2>範囲</h2>
+
+<p><img src="img/Screenshot_from_2013-02-10 01:09:44.png" height="400" />
+このようにポイントだけではなく、範囲を示すこともできます。</p>
+
+</div>
+<div class="step" data-y="7200" data-x="3600">
+<h2>VIEWSによる一覧表示</h2>
+
+<p>DrupalのVIEWSを用いて、一覧表示をしてみましょう。
+ここで、Viewsとは何かについては、詳細な説明はしません。
+Viewsは、ノードなどのコンテンツ、ユーザなどの任意の要素の、検索条件に合致した要素を集めて、その一覧表示させる画面を作成する機能です。今回は、地図上に一覧を載せる仕掛けとします。</p>
+
+</div>
+<div class="step" data-y="7200" data-x="4800">
+<h2>VIEWSモジュールの有効化</h2>
+
+<p>Views, Views UI, OpenLayers Viewsモジュールを有効化します。
+“Structure” - “Views” から、 “Add Views”として新規Viewを作成します。</p>
+
+</div>
+<div class="step" data-y="8000" data-x="0">
+<h2>実現する構造</h2>
+
+<p><img src="img/openlayers-views-diagram.png" /></p>
+
+</div>
+<div class="step" data-y="8000" data-x="1200">
+<h2>OpenLayers設定（ベースマップ作成）</h2>
+
+<p>以下の２つをcloneのもとにしてクローンしてください。</p>
+
+<p><img src="img/drupal_views_openlayers_maps_clone_from.png" /></p>
+
+</div>
+<div class="step" data-y="8000" data-x="2400">
+<h2>OpenLayers設定（ベースマップ作成）</h2>
+
+<p>まず、clone_of_geofield_widget_mapのほうを設定します。入力用に使います。
+<img src="img/drupal_views_openlayers_maps_geofield_map.png" /></p>
+
+</div>
+<div class="step" data-y="8000" data-x="3600">
+<h2>OpenLayers設定（ベースマップ作成）</h2>
+
+<p>入力用のオーバーレイを有効にします。
+<img src="img/drupal_views_openlayers_geofield_formatter.png" /></p>
+
+</div>
+<div class="step" data-y="8000" data-x="4800">
+<h2>VIEWS設定(Data Overlay)</h2>
+
+<ul>
+<li>新規Viewを追加してください。</li>
+<li>デフォルトでPageをつくろうとしますが、チェックボックスをオフにしてください。</li>
+<li>Addを押して、Displayを追加します。
+<ul>
+<li>OpenLars Data Overlayを選んでください。</li>
+</ul></li>
+<li>OpenLayers Data Overlayの設定で、FORMATにOpenLayers Data Overlayを選択します。</li>
+<li>FIELDSにて、"Content: Title" "Content: Geo(geo)" "Contents: Body(body)"を追加します。
+<ul>
+<li>これは、地図上のポップアップで、表示されるために必要です。</li>
+<li>また、位置情報を地図配置に使用します。</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="8800" data-x="0">
+<h2>設定画面の例</h2>
+
+<p><img src="img/drupal_views_openlayers_views_definition.png" /></p>
+
+</div>
+<div class="step" data-y="8800" data-x="1200">
+<h2>設定画面の例</h2>
+
+<p><img src="img/drupal_openlayers_views_add_openlayers_data_overlay.png" /></p>
+
+</div>
+<div class="step" data-y="8800" data-x="2400">
+<h2>設定画面の例</h2>
+
+<p><img src="img/drupal_views_openlayers_data_layers_format.png" /></p>
+
+</div>
+<div class="step" data-y="8800" data-x="3600">
+<h2>VIEWS設定(Display page)</h2>
+
+<ul>
+<li>新規Displayを追加します(Add-Page)</li>
+<li>FORMATに"OpenLayers Map"を選択します</li>
+<li>Pathを設定します（インデックスページのパス） ex. /mapindex</li>
+</ul>
+
+</div>
+<div class="step" data-y="8800" data-x="4800">
+<h2>OpenLayers設定（オーバーレイ追加）</h2>
+
+<p>これでベースマップと、ノードから作成したDataオーバーレイの生成ができたので、つぎにオーバーレイを
+ベースマップの上で有効にします。</p>
+
+</div>
+<div class="step" data-y="9600" data-x="0">
+<h2>Openlayers設定(出力用オーバーレイ追加)</h2>
+
+<p>Geofield formatter MAP のクローンしたもの(output)を編集します。
+<img src="img/drupal_views_openlayers_maps_geofield_map.png"/></p>
+
+</div>
+<div class="step" data-y="9600" data-x="1200">
+<h2>Openlayers設定(出力用オーバーレイ追加)</h2>
+
+<p>出力用に、先程Viewsで作成したオーバーレイを表示有効にします。
+<img src="img/openlayers_views_overlay_formatter.png"/></p>
+
+</div>
+<div class="step" data-y="9600" data-x="2400">
+<h2>Openlayers設定(出力用オーバーレイ追加)</h2>
+
+<ul>
+<li>ノード情報の重ね合わせを有効にするために、Behaviorの設定を替えます。
+<ul>
+<li>" Cluster Features "にチェックを入れ、" my_map_items_openlayers_1 "を選択します。</li>
+</ul></li>
+<li>ポップアップ設定" Pop Up for Features "を有効にし、" my_map_items_openlayers_1 "を選択します。</li>
+</ul>
+
+</div>
+<div class="step" data-y="9600" data-x="3600">
+<h2>完成</h2>
+
+<p>これで地図上のインデックスが完成しました。</p>
+
+<p><img src="img/drupal_views_openlayers_mapindex.png"/></p>
+
+</div>
+<div class="step" data-y="9600" data-x="4800">
+<h1>THANK YOU</h1>
+
+<pre><code>Http://osm.jp/
+</code></pre>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

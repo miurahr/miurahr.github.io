@@ -1,0 +1,296 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>TileMan </h1>
+
+<p>TileMan+Tirex: new alternative for Tile Service</p>
+
+<pre><code>FOSS4G 2013/Tokyo
+Hiroshi Miura(@miurahr) 
+OpenStreetMap Foundation Japan
+
+github.com/osmfj/tileman
+</code></pre>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>Agenda</h2>
+
+<p><img src="img/2013-11-tileman_agenda.jpg" /></p>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h1>Motivation</h1>
+
+<p><img src="img/motivation_dog.JPG"/></p>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>Motivation: At first</h2>
+
+<ul>
+<li><p>Realize simple tile CDN for Japan</p></li>
+<li><p>Utilize cloud server sponsord by GMO Internet</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>Motivation: chaged mind soon</h2>
+
+<ul>
+<li><p>Starting local tile service</p>
+
+<ul>
+<li><p>Feature to help adoption in public sector</p></li>
+<li><p>Map design to familiar local users</p></li>
+<li><p>Flexible</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h1>What's TileMan</h1>
+
+<p>Distributed tile server frontend</p>
+
+<p><code>http://osmfj.github.io/tileman</code></p>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>TileMan: tile manager</h2>
+
+<p>Non-fledged Tile Serving Manager</p>
+
+<ul>
+<li><p>It makes Tirex to different</p>
+
+<ul>
+<li>Distributed Tile Serving</li>
+<li>render-ahead feature</li>
+<li>non-blocking, high performance request handling</li>
+</ul></li>
+<li><p>Just started in March, 2013.
+and now v1.3 and soon v1.4.</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>TileMan: powerful</h2>
+
+<ul>
+<li><p>Powerful load control and direction</p>
+
+<ul>
+<li><p>by requested tiles geometory.</p></li>
+<li><p>by client address, city, country</p></li>
+<li><p>by requested browser version</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>TileMan: by client country</h2>
+
+<p>Border dispute Island between Korea and Japan.</p>
+
+<p><img src="img/boarder_island_ip_korean.png" width="400"/><img src="img/boarder_island_ip_japanese.png" width="400"/></p>
+
+<p>From IP Address Korean,&nbsp;&nbsp;&nbsp;&nbsp;From IP Address Japan</p>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>TileMan: use case</h2>
+
+<ul>
+<li><p>OSMF Japan serves Japan tiles: tile.openstreetmap.jp</p>
+
+<ul>
+<li><p>Act as cache server for other tiles than Japan</p></li>
+<li><p>Dynamic boarder display control</p></li>
+<li><p>Serving live tiles around Japan</p></li>
+<li><p>render-ahead feature enabled</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>Easy install</h2>
+
+<ul>
+<li><p>Uubntu PPA at launchpad.net/~osmjapan</p></li>
+<li><p>Vagrant support (one line command build server)</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h1>Architecture</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>Overview</h2>
+
+<p><img src="img/tileman-overview.png"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>TileMan: configuration</h2>
+
+<p>Typical Servers configuration</p>
+
+<p><img src="img/typical_configuration.png"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>TileMan: configuration (cont.)</h2>
+
+<p>Extensive servers configuration</p>
+
+<p><img src="img/extensive_configuration.png"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>TileMan: Internal</h2>
+
+<p><img src="img/tileman_software_stack.png" height="500"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>OpenResty: App Server Extension for Nginx</h2>
+
+<p>Web Application Server</p>
+
+<ul>
+<li><p>high-performance &amp; 10K+ connections</p></li>
+<li><p>Lua programming language</p></li>
+<li><p>backends: MySQL, PostgreSQL, Memcached, and Redis</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>Nginx</h2>
+
+<p>nginx.org: high performance http server</p>
+
+<ul>
+<li><p>World 2nd http server (12.3% of active site)</p></li>
+<li><p>Asynchronous architecture, event driven</p></li>
+<li><p>Low memory foot print, CPU usage</p></li>
+</ul>
+
+<p><img src="img/webserverjuly2013-620x359.png"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>Lua</h2>
+
+<ul>
+<li>"Lua" (pronounced LOO-ah) means "Moon" in Portuguese</li>
+</ul>
+
+<p><img src="img/lua_320.jpg"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>Lua</h2>
+
+<p>lua.org</p>
+
+<ul>
+<li><p>Scripting language born in Brazil in 1992</p>
+
+<ul>
+<li><p>Simple procedural syntax/tileman_software_stack.png</p></li>
+<li><p>powerful data description</p></li>
+<li><p>Dynamic variable type</p></li>
+<li><p>Register-based virtual machine</p></li>
+<li><p>Automatic memory management</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>Tirex: at glance</h2>
+
+<p>Tirex: pronounce "Ti-rex"</p>
+
+<ul>
+<li><p>the tile server suite</p></li>
+<li><p>designed for OpenStreetMap</p></li>
+<li><p>powered by Perl</p></li>
+<li><p>multiple backend: mapnik, mapserver, et. al.</p></li>
+<li><p>parallel rendering</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>TileMan: utilities</h2>
+
+<ul>
+<li><p>Help create/import/update postgis DB from planet data</p></li>
+<li><p>Expire old tile using powerful Tirex-batch</p></li>
+<li><p>Vagrant script for automate configution .</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>Future Challenge</h2>
+
+<ul>
+<li><p>mod_tile/renderd protocol support</p></li>
+<li><p>Lightweight Vector tile service</p>
+
+<ul>
+<li>GeoJSON</li>
+<li>PostgreSQL/PostGIS integration</li>
+</ul></li>
+<li><p>Automation support</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>Thanks and welcome</h2>
+
+<p>Ideas, suggestion and participation are welcome!</p>
+
+<ul>
+<li><p>tile-serving ML or <code>github.com/osmfj/tileman</code></p>
+
+<p>You can reach this presentation at <code>https://miurahr.github.io/</code></p></li>
+<li><p>Tile Server supported by GMO Internet group.</p></li>
+<li>TileMan Photo: flickr.com/photos/brieanddylan/4602743878</li>
+</ul>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

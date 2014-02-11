@@ -1,0 +1,580 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>OpenStreetMapアプリ</h1>
+
+<p>〜モバイル・Webアプリをグレードアップしよう〜</p>
+
+<p>一般社団法人オープンストリートマップ・ファウンデーション・ジャパン </p>
+
+<p>代表理事 </p>
+
+<p>三浦広志 </p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>オープンストリートマップ(OSM)って何？</h2>
+
+<ul>
+<li>フリーなWiki地図　作成プロジェクト</li>
+<li>世界的 伊能忠敬　プロジェクト</li>
+<li>オープン地理データ　作成プロジェクト</li>
+<li>オープン地理データをベースとしたイノベーション</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>ライセンス：ODbL </h2>
+
+<p><image src="img/odbl_you_are_free.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h1>データベースとしてのOSM</h1>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>データ量は膨大かつ成長中</h2>
+
+<p>地上に存在する「あらゆるモノ」の、空間的な位置を主キーとしたDB</p>
+
+<ul>
+<li>2,000,000,000個の位置情報が格納されている。</li>
+</ul>
+
+<p><img src="img/Osmdbstats2.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>Way</h2>
+
+<ul>
+<li>200,000,000 本の道路などの(線分)情報が格納されている </li>
+</ul>
+
+<p><img src="img/Osmdbstats2Ways.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h1>例</h1>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>鶴ケ城</h2>
+
+<p><img src="img/tsurugajo/tsurugajo_map.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>データ抽出の例</h2>
+
+<p><img src="img/tsurugajo/tsurugajo_data.png"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h2>データ内容の例</h2>
+
+<p><img src="img/tsurugajo/tsurajo_jinja_datum.png" width="1000" /></p>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>TDL</h2>
+
+<p><img src="img/tdl2013.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>ゴルフ場</h2>
+
+<p><img src="img/golfclub.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h1>利用方法</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>OpenStreetMapデータ利用方法</h2>
+
+<ul>
+<li><p>Webアプリやブログに地図を貼り付ける</p></li>
+<li><p>モバイルアプリで地図データを利用する</p></li>
+<li><p>地図をカスタマイズする</p></li>
+<li><p>特定用途地図サービスを提供する</p></li>
+<li><p>データベースとして利用する</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h1>Webアプリでの利用</h1>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>Leaflet.js</h2>
+
+<ul>
+<li><p>Webサイトやモバイル向け</p></li>
+<li><p>地図関連表示を実現</p></li>
+<li><p>Javascriptライブラリ</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>Leaflet.js</h2>
+
+<ul>
+<li>Leafletjs.com</li>
+</ul>
+
+<p><img src="img/leaflet.js_webpage.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>サンプルコード 3step</h2>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>step1</h2>
+
+<ul>
+<li><p>"map" div要素に地図を作る指定</p></li>
+<li><p>初期値のズームや位置を指定</p>
+
+<pre><code>var map = L.map('map').setView([51.505, -0.09], 13);
+</code></pre></li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>step2</h2>
+
+<ul>
+<li><p>OpenStreetMapのタイル・レイヤーを追加する</p></li>
+<li><p>copyright表示忘れずに</p>
+
+<pre><code>L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+attribution: '&amp;copy; &lt;a href="http://osm.org/copyright"&gt;OpenStreetMap&lt;/a&gt; contributors'}).addTo(map);
+</code></pre></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>step3</h2>
+
+<ul>
+<li><p>場所を示すマーカーやピンを配置し、ポップアップしての情報表示を指示</p>
+
+<pre><code>L.marker([51.5, -0.09]).addTo(map)
+        .bindPopup('A pretty CSS3 popup. &lt;br&gt; Easily customizable.')
+        .openPopup();
+</code></pre></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="1200">
+<h2>イメージ</h2>
+
+<p><img src="img/leaflet_image_1.png" /></p>
+
+</div>
+<div class="step" data-y="3200" data-x="2400">
+<h2>まとめ</h2>
+
+<p>きわめて簡単に追加できるので、アプリに地図機能をいれてはどうでしょう！</p>
+
+</div>
+<div class="step" data-y="3200" data-x="3600">
+<h2>OpenLayers</h2>
+
+<ul>
+<li><p>Leaflet.jsより歴史有るライブラリ</p></li>
+<li><p>編集機能もあり</p></li>
+<li><p>サイズが大きくなったため、次メジャーバージョン(3.0)で大幅な改変が予定</p></li>
+<li><p>ブログソフトなど、ほとんどのWebプラットホームでプラグイン対応可能</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="3200" data-x="4800">
+<h2>OpenLayers</h2>
+
+<p><img src="img/openlayers_webpage.png" /></p>
+
+</div>
+<div class="step" data-y="4000" data-x="0">
+<h2>モバイルアプリでの利用</h2>
+
+<ul>
+<li><p>フリーのライセンスのため、オフライン利用可能</p></li>
+<li><p>ライブラリ等のサポート</p></li>
+<li><p>HTML5サポート</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4000" data-x="1200">
+<h2>Osmdroid (Android)</h2>
+
+<ul>
+<li><p>MapsViewっぽくつかえる</p></li>
+<li><p>code.google.com/p/osmdroid からjar入手</p></li>
+<li><p>配布サイトのドキュメント情報は古い。</p></li>
+<li><p>Wikiやチュートリアル等もバージョンに注意要</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4000" data-x="2400">
+<h2>Mapsforge (Andoroid)</h2>
+
+<ul>
+<li><p>オフラインマップでつかえる</p></li>
+<li><p>ライブラリ</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4000" data-x="3600">
+<h2>OSMAnd2 (android)</h2>
+
+<ul>
+<li><p>OpenStreetMapを利用するためのライブラリ</p></li>
+<li><p>OpenStreetMapの編集アプリでもある</p></li>
+
+* 
+</ul>
+
+</div>
+<div class="step" data-y="4000" data-x="4800">
+<h2>route-me (iOS)</h2>
+
+<ul>
+<li><p>iOSでのOSMライブラリの決定版</p></li>
+<li><p>機能はかなりの充実</p></li>
+<li><p>すでにOSM関係アプリが多くあるので、アイディア勝負になります</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4800" data-x="0">
+<h2>背景地図をカスタマイズする</h2>
+
+<ul>
+<li><p>使い勝手の良さは、背景地図の表現から</p></li>
+<li><p>アプリのデザインと、地図表現を統一する</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4800" data-x="1200">
+<h2>MapBox.com</h2>
+
+<p><img src="img/mapbox_webimage.png" width="800"/></p>
+
+</div>
+<div class="step" data-y="4800" data-x="2400">
+<h2>MapBox</h2>
+
+<ul>
+<li><p>Free版(アクセス制限)あり</p></li>
+<li><p>容易にWebからカスタマイズできる</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="4800" data-x="3600">
+<h2>CloudMade</h2>
+
+<ul>
+<li><p>カスタマイズ背景地図配信サービス</p></li>
+<li><p>Free版あり</p></li>
+<li><p>Frameworkも提供</p>
+
+<ul>
+<li>Java,C++,JS,Pythonなど</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="4800" data-x="4800">
+<h1>独自タイル配信</h1>
+
+<ul>
+<li><p>サービスを使わず、独自にマップ・タイルを配信する</p></li>
+<li><p>OSMのコミュニティ・タイルサーバは、コミュニテイ向け</p></li>
+<li><p>tile.openstreetmapは、ビジネス用途には推奨されない(遮断もあり)</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="5600" data-x="0">
+<h2>Osmosis</h2>
+
+<ul>
+<li><p>OSMデータを操作するツールキット</p></li>
+<li><p>Javaベース</p></li>
+<li><p>OSMデータ取得も支援している</p>
+
+<ul>
+<li>https://wiki.openstreetmap.org/wiki/Osmosis</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="5600" data-x="1200">
+<h2>Tirex</h2>
+
+<ul>
+<li><p>Mapnikレンダリングの駆動サーバ</p></li>
+<li><p>PostgreSQL/PostGISデータベースに格納したOSMデータから地図画像を生成</p></li>
+<li><p>ApacheやNginxから、APIでリクエストを処理する</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="5600" data-x="2400">
+<h2>TileMan</h2>
+
+<ul>
+<li><p>Tirexを駆動する Nginx httpサーバをベースにしたマップサーバ</p></li>
+<li><p>軽量、高性能が売り</p></li>
+<li><p>日本製  OpenStreetMap.jp にて実運用中</p></li>
+<li><p>Nginx上に Lua言語で実装されている</p></li>
+<li><p>Osmosis/PostGIS/Tirexの処理スクリプトやドキュメントを含む</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="5600" data-x="3600">
+<h2>Mapnik-stylesheet</h2>
+
+<ul>
+<li><p>地図タイル画像のレンダリングを指示するデザインの設定</p></li>
+<li><p>XML</p></li>
+<li><p>OpenStreetMapの基本の設定を元に、改良可能</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="5600" data-x="4800">
+<h2>URL</h2>
+
+<ul>
+<li><p>https://wiki.openstreetmap.org/wiki/Osmosis</p></li>
+<li><p>https://wiki.openstreetmap.org/wiki/Tirex</p></li>
+<li><p>https://github.com/osmfj/tileman</p></li>
+<li><p>https://github.com/osmfj/mapnik-stylesheets</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="6400" data-x="0">
+<h1>モバイル・アプリ実例</h1>
+
+<ul>
+<li>イメージを高めるため、OSMを使った実例を見ていこう</li>
+</ul>
+
+</div>
+<div class="step" data-y="6400" data-x="1200">
+<h2>Maps with me</h2>
+
+<ul>
+<li><p>オフライン地図アプリ(ダウンロード→閲覧)</p></li>
+<li><p>背景のベースマップ（ラスター）</p></li>
+<li><p>店やバス停等の地理情報（ベクター）</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="6400" data-x="2400">
+<h2>画面イメージ</h2>
+
+<p><img src="img/maps_with_me.jpg" width="800" /></p>
+
+</div>
+<div class="step" data-y="6400" data-x="3600">
+<h2>RMaps</h2>
+
+<ul>
+<li><p>オフラインマップアプリ</p></li>
+<li><p>LGPLライセンスで、参考になる</p></li>
+</ul>
+
+<p>http://robertdeveloper.blogspot.jp/2009/08/rmaps.html</p>
+
+</div>
+<div class="step" data-y="6400" data-x="4800">
+<h2>MapDroid</h2>
+
+<ul>
+<li><p>オフラインマップアプリ</p></li>
+<li><p>LGPLライセンスのフリーソフトウエア</p></li>
+</ul>
+
+<p>https://github.com/tedjp/mapdroid</p>
+
+</div>
+<div class="step" data-y="7200" data-x="0">
+<h2>画面イメージ</h2>
+
+<p><img src="img/Mapdroid-onesix-cropped.png" /></p>
+
+</div>
+<div class="step" data-y="7200" data-x="1200">
+<h2>AndRoad</h2>
+
+<ul>
+<li><p>OSM ベースのナビアプリ</p></li>
+<li><p>GPLのフリーソフトウエア</p>
+
+<ul>
+<li>https://wiki.openstreetmap.org/wiki/AndRoad</li>
+</ul></li>
+</ul>
+
+<p><img src="img/360px-AndRoad.png" height="400" /></p>
+
+</div>
+<div class="step" data-y="7200" data-x="2400">
+<h2>開発者向け情報</h2>
+
+<ul>
+<li><p>Wikiサイト: </p>
+
+<ul>
+<li><p>https://wiki.openstreetmap.org/wiki/Software</p></li>
+<li><p>https://wiki.openstreetmap.org/wiki/Develop</p></li>
+<li><p>https://wiki.openstreetmap.org/wiki/Android</p></li>
+<li><p>https://wiki.openstreetmap.org/wiki/Deploying_your_own_Slippy_Map</p></li>
+</ul></li>
+<li><p>API解説</p>
+
+<ul>
+<li>http://wiki.openstreetmap.org/wiki/Databases_and_data_access_APIs</li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="7200" data-x="3600">
+<h1>特定用途地図サービスの提供</h1>
+
+</div>
+<div class="step" data-y="7200" data-x="4800">
+<h2>バリアフリーマップ・ナビ</h2>
+
+<ul>
+<li>Wheelmap.org</li>
+</ul>
+
+<p><img src="img/wheelmap_screen_1.jpg" /></p>
+
+</div>
+<div class="step" data-y="8000" data-x="0">
+<h1>OpenStreetMapの活用：新たな方向性</h1>
+
+</div>
+<div class="step" data-y="8000" data-x="1200">
+<h2>背景図以外での利用を</h2>
+
+<ul>
+<li><p>ボランティア（マッパー）が作成した地理データ（データベースの中身）を利用できる</p></li>
+<li><p>地理データベースへ APIを通じてクエリーできる</p></li>
+<li><p>LOD化もされている</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="8000" data-x="2400">
+<h2>LinkedgeoData</h2>
+
+<p><img src="img/linkedGeodata.png" height="600"/></p>
+
+</div>
+<div class="step" data-y="8000" data-x="3600">
+<h2>自らデータを使う</h2>
+
+<ul>
+<li>データベースとデータアクセス APIの提供</li>
+</ul>
+
+</div>
+<div class="step" data-y="8000" data-x="4800">
+<ul>
+<li>Planet.OSM 全世界のデータがXML DUMP形式などで取得できます。</li>
+<li>XAPI, Overpass API:  全世界のデータを、条件指定で取得できます。 </li>
+</ul>
+
+</div>
+<div class="step" data-y="8800" data-x="0">
+<h2>Planet.OSM</h2>
+
+<ul>
+<li>XMLのデータサイズは、全世界で200GB程</li>
+<li>データベース管理システムに取り込んでデータ処理ができる</li>
+<li>ただし、Xeon 4core 16GBマシンでPostGIS取り込みに １週間かかるとの報告がありました</li>
+</ul>
+
+</div>
+<div class="step" data-y="8800" data-x="1200">
+<h2>XAPI</h2>
+
+<p>条件を指定して、Web経由でデータを取り出せます。
+RESTfulなアクセス可能です。</p>
+
+</div>
+<div class="step" data-y="8800" data-x="2400">
+<h2>Overpass API</h2>
+
+<p>極めて複雑なクエリーを広範囲に行えます。
+XML風、JSON風のクエリー言語Overpass QL で検索可能です。</p>
+
+</div>
+<div class="step" data-y="8800" data-x="3600">
+<h1>データ作成の模様</h1>
+
+</div>
+<div class="step" data-y="8800" data-x="5300">
+<h2>世界中　120万人 で作成中</h2>
+
+<!-- data-x="5300"--><!-- data-y="5300" --><!-- data-z="1500" --><!-- data-rotate="150" -->
+
+<p><video id="video" src="movie/116273622.ogv" poster="img/video_cover.png" controls width="1000"/></p>
+
+</div>
+<div class="step" data-y="9600" data-x="0">
+<h2>最後に</h2>
+
+<p>OpenStreetMapは
+OSS的なDBデータそのものを提供しています。</p>
+
+<p>OpenStreetMap </p>
+
+<p>http://OSM.org/</p>
+
+<p>http://OSM.jp/</p>
+
+<p>ご清聴ありがとうございます</p>
+
+<p>OSMFJ Hiroshi Miura  (miurahr@osmf.jp)</p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

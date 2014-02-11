@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>オープン地理データの活用アイディア</h1>
+
+<p>一般社団法人オープンストリートマップ・ファウンデーション・ジャパン </p>
+
+<p>代表理事</p>
+
+<p>三浦広志 </p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h2>オープンストリートマップ(OSM)って何？</h2>
+
+<ul>
+<li>フリーなWiki地図　プロジェクト</li>
+<li>世界的 伊能忠敬　プロジェクト</li>
+<li>オープン地理データ　プロジェクト</li>
+<li>世界100万人が制作活用に参加するプロジェクト</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>OSMによく有る誤解</h2>
+
+<ul>
+<li>Google MapsやYahoo!Mapのようなものでしょ</li>
+<li>道路地図でしょ</li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="5300">
+<h2>世界中　皆 で作成中</h2>
+
+<!-- data-x="5300"--><!-- data-y="5300" --><!-- data-z="1500" --><!-- data-rotate="150" -->
+
+<p><video id="video" src="movie/116273622.ogv" poster="img/video_cover.png" controls width="1000"/></p>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>何を使えるか、何ができるか</h2>
+
+<ul>
+<li>主題図の背景地図として利用する。</li>
+<li>ボランティア（マッパー）が作成した地理データ（データベースの中身）を利用できます。</li>
+<li>地理データベースへ APIを通じてクエリーできます。</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>ライセンス</h2>
+
+<ul>
+<li>既定の背景図はCC-BY-SAです。</li>
+<li>DBは、Open Database Lisence(ODbL)に従います。</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>ODbL</h2>
+
+<p><image src="img/odbl_you_are_free.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>第三者サービスを利用する</h2>
+
+<h1>例： MapBox</h1>
+
+<p><img src="img/mapbox_webimage.png"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>自らデータを使う</h2>
+
+<ul>
+<li>データベースとデータアクセス APIの提供</li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<ul>
+<li>Planet.OSM 全世界のデータがXML DUMP形式などで取得できます。</li>
+<li>XAPI, Overpass API:  全世界のデータを、条件指定で取得できます。 </li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>Planet.OSM</h2>
+
+<ul>
+<li>XMLのデータサイズは、全世界で200GB程</li>
+<li>データベース管理システムに取り込んでデータ処理ができる</li>
+<li>ただし、Xeon 4core 16GBマシンでPostGIS取り込みに １週間かかるとの報告がありました</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>XAPI</h2>
+
+<p>条件を指定して、Web経由でデータを取り出せます。
+RESTfulなアクセス可能です。</p>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>Overpass API</h2>
+
+<p>極めて複雑なクエリーを広範囲に行えます。
+XML風、JSON風のクエリー言語Overpass QL で検索可能です。</p>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>LODとして活用</h2>
+
+<ul>
+<li>OSMが持つ地物の、位置 ｘ 属性　のデータと、　各種のオープンデータをJOINさせる</li>
+<li>OSMの部分データを抽出して、知見をとりだす</li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>OSMらしいデータ</h2>
+
+<ul>
+<li>世界最大の貧民街KIBERA</li>
+<li>イスラエル　ガザ地区のマップデータ</li>
+<li>東日本大震災浸水状況のマップデータ</li>
+<li>駐車場データ、コンビニデータ、レストランの種類、教会の宗派、etc.</li>
+<li>あらゆるデータが、タグとして含まれます。</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>最後に</h2>
+
+<p>OSS的なDBデータそのものを提供しています。
+詳細は以下へ。</p>
+
+<p>OpenStreetMap http://OSM.org/</p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+

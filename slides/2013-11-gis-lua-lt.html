@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="./css/impress.css" rel="stylesheet" />
+</head>
+<body>
+<div id="impress" class="impress-not-supported">
+    <div class="fallback-message">
+        <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest <b>Chrome</b> or <b>Safari</b> browser. Firefox 10 (to be released soon) will also handle it.</p>
+    </div>
+
+<div id="title" class="step" data-y="0" data-x="0">
+<h1>Scripting GIS with LUA</h1>
+
+<p>Hiroshi Miura @miurahr</p>
+
+<p>OpenStreetMap Foundation Japan</p>
+
+</div>
+<div class="step" data-y="0" data-x="1200">
+<h1>Problem</h1>
+
+</div>
+<div class="step" data-y="0" data-x="2400">
+<h2>GIS configurations</h2>
+
+<ul>
+<li><p>沢山の測地系</p></li>
+<li><p>多量の地物の種類</p></li>
+<li><p>多種類のデータソース</p></li>
+<li><p>多種類のデータ形式</p></li>
+<li><p>複雑なロジック</p></li>
+<li><p>地図表現の多様性</p></li>
+<li><p>Vector/raster</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="3600">
+<h2>組み合わせ問題</h2>
+
+<ul>
+<li><p>OpenStreetMapの地図スタイル指定</p>
+
+<p>既定の指定ファイル： ＞6400 行のXML</p></li>
+<li><p>理由： </p>
+
+<p>道＆国道＆ズームが１６から１７＆トンネルではない＆橋ではない
+    →赤＆幅１０ピクセル
+道＆剣道＆ズームが１５＆トンネル＆橋ではない
+    →褐色
+多数つづく</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="0" data-x="4800">
+<h2>組み合わせ爆発</h2>
+
+<p><img src="img/explosion_cc_Filter_Forge.jpg"></p>
+
+</div>
+<div class="step" data-y="800" data-x="0">
+<h2>CSSが提唱される</h2>
+
+<ul>
+<li><p>CartoCSS</p></li>
+<li><p>CSSによる指定で、基本設定＋応用設定＋個別設定のように積み重ねるようなスタイル指定を実現</p>
+
+<p>同等の指定ファイル： > 4000行のCSS</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="800" data-x="1200">
+<h2>OSMデータのDBインポート</h2>
+
+<ul>
+<li><p>osm2pgsql</p></li>
+<li><p>元データのうち、処理対象としたい地物をフィルターしてDBスキーマにインポート</p></li>
+</ul>
+
+<p><img src="img/road_to_heaven_neychuluvr_4887518384.jpg" height="350"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="2400">
+<h2>組み合わせ爆発</h2>
+
+<p><img src="img/explosion_cc_Filter_Forge.jpg"></p>
+
+</div>
+<div class="step" data-y="800" data-x="3600">
+<h2>なにか良い方法は？</h2>
+
+<ul>
+<li><p>プログラム的に設定を表現できないか</p></li>
+<li><p>フィルターとして言語を組み込み</p></li>
+<li><p>処理内容を「Procedural」に記述</p></li>
+<li><p>やりたい方法（HOW)を直感的に記述</p></li>
+</ul>
+
+<p><img src="img/procedure_cristinabe_4635930677.jpg" height="200"/></p>
+
+</div>
+<div class="step" data-y="800" data-x="4800">
+<h1>Lua</h1>
+
+</div>
+<div class="step" data-y="1600" data-x="0">
+<h2>Lua</h2>
+
+<ul>
+<li>"Lua" (pronounced LOO-ah) means "Moon" in Portuguese</li>
+</ul>
+
+<p><img src="img/lua_320.jpg"/></p>
+
+</div>
+<div class="step" data-y="1600" data-x="1200">
+<h2>Lua</h2>
+
+<p>lua.org</p>
+
+<ul>
+<li><p>Scripting language born in Brazil in 1992</p></li>
+<li><p>Combines simple procedural syntax with powerful data description</p>
+
+<ul>
+<li><p>Dynamic variable type</p></li>
+<li><p>Register-based virtual machine</p></li>
+<li><p>Automatic memory management</p></li>
+</ul></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="2400">
+<h2>Why Lua </h2>
+
+<ul>
+<li><p>Lua is a proven, robust language</p></li>
+<li><p>Lua is fast</p></li>
+<li><p>Lua is portable</p></li>
+<li><p>Lua is embeddable</p></li>
+<li><p>Lua is powerful</p></li>
+<li><p>Lua is small</p></li>
+<li><p>Lua is free</p></li>
+<li><p>Lua loves Games</p></li>
+</ul>
+
+</div>
+<div class="step" data-y="1600" data-x="3600">
+<h2>LUA example</h2>
+
+<pre><code>print("Hello World")
+</code></pre>
+
+</div>
+<div class="step" data-y="1600" data-x="4800">
+<h2>OSM2PgSqlとLUA(1)</h2>
+
+<p>style.luaによりインポートのフィルター指定</p>
+
+<p>例</p>
+
+<ul>
+<li>重なり方向の優先度数値の計算</li>
+</ul>
+
+</div>
+<div class="step" data-y="2400" data-x="0">
+<h2>OSM2PgSqlとLUA(2)</h2>
+
+<pre><code>function add_z_order(keyvalues)
+   z_order = 0
+   if (keyvalues["layer"] ~= nil ) then
+      z_order = 10*keyvalues["layer"]
+   end
+   zordering_tags = {{ 'railway', nil, 5, 1},
+       { 'boundary', 'administrative', 0, 1}, 
+      .....
+</code></pre>
+
+</div>
+<div class="step" data-y="2400" data-x="1200">
+<h2>OSM2PgSqlとLUA(3)</h2>
+
+<pre><code>続き
+   for i,k in ipairs(zordering_tags) do -- イテレーション
+     if ((k[2] 
+          and keyvalues[k[1]] == k[2]) -- Key合致
+      or (k[2] == nil 
+          and keyvalues[k[1]] ~= nil)) then -- Key/Value合致
+        if (k[4] == 1) then
+           roads = 1
+        end
+        z_order = z_order + k[3]   -- 重み付け
+     end
+</code></pre>
+
+</div>
+<div class="step" data-y="2400" data-x="2400">
+<h2>Another Use Case</h2>
+
+<p><img src="img/osm_jp_map_cap.png" height="400"/></p>
+
+</div>
+<div class="step" data-y="2400" data-x="3600">
+<h2>Another Use Case</h2>
+
+<p><img src="img/boarder_island_ip_japanese.png" /></p>
+
+</div>
+<div class="step" data-y="2400" data-x="4800">
+<h2>Another Use Case</h2>
+
+<p>Build Tile serving service - TileMan</p>
+
+<p>11/2 AM 講演でご紹介</p>
+
+</div>
+<div class="step" data-y="3200" data-x="0">
+<h2>Credit</h2>
+
+<ul>
+<li><p>I borrowed some example and ideas from @agentzh, James Hurst @pintsized.</p></li>
+<li><p>Photo: Filter Forge - flickr.com/photos/filterforge/9134251006</p></li>
+<li><p>This presentation is written by Markdown2Impress.</p></li>
+</ul>
+
+</div>
+<div data-z="-100" class="step" data-y="0" data-x="-150">
+<h2>introduction to Lua</h2>
+
+<p><!-- data-x=-150 -->
+<!-- data-y=0 -->
+<!-- data-z=-100 -->
+<img src="img/lua_1024.jpg"/></p>
+
+</div>
+
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+<script src="./js/impress.js"></script>
+
+</body>
+</html>
+
