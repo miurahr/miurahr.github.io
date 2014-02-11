@@ -91,7 +91,7 @@ LinkedgeoData
 ------------
 <!-- data-x="5300"--><!-- data-y="5300" --><!-- data-z="1500" --><!-- data-rotate="150" -->
 
-<video id="video" src="movie/116273622.ogv" poster="img/video_cover.png" controls width="1000"/>
+<video id="video" src="https://s3-ap-northeast-1.amazonaws.com/miurahr-public/movie/116273622.ogv" poster="img/video_cover.png" controls width="1000"/>
 
 最後に
 ----
