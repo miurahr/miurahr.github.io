@@ -13,6 +13,7 @@ tagline: Site Tagline
 author :
   name : Hiroshi Miura
   email : miurahr@linux.com
+  email_md5: b987f912c0363a9e6431003cf948f7db
   github : miurahr
   twitter : miurahr
 #  feedburner : feedname
