@@ -34,6 +34,10 @@ The projects here are powered by your donations.
 
 You can donate through Paypal. You can also donate with Amazon.co.jp/Amazon.com wish list.
 
+<a href="http://amzn.com/w/2ON42B9SWTF05"> Amazon.com Wish list</a>
+
+WARNING: I am living in Japan; it may be nessesary additional transportation fee.
+
 <h2>寄付の受付</h2>
 
 ここでのプロジェクトは、みなさんの支援加速されます。
@@ -51,7 +55,7 @@ Paypalでは、
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="4G9NNC2BEQ4P4">
 <table>
-<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択</td></tr><tr><td><select name="os0">
+<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択 one time plan</td></tr><tr><td><select name="os0">
 <option value="プラン5">プラン5 ¥500 JPY</option>
 <option value="プラン7">プラン7 ¥700 JPY</option>
 <option value="プラン10">プラン10 ¥1,000 JPY</option>
@@ -73,10 +77,10 @@ Paypalでは、
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="9PA8259B7HCEN">
 <table>
-<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択</td></tr><tr><td><select name="os0">
- <option value="プラン5">プラン5 : &500 JPY - 毎年</option>
- <option value="プラン7">プラン7 : &700 JPY - 毎年</option>
- <option value="プラン10">プラン10 : &1,000 JPY - 毎年</option>
+<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択 Yearly plan</td></tr><tr><td><select name="os0">
+ <option value="プラン5">プラン5 : 500 JPY - 毎年</option>
+ <option value="プラン7">プラン7 : 700 JPY - 毎年</option>
+ <option value="プラン10">プラン10 : 1,000 JPY - 毎年</option>
  <option value="プラン15">プラン15 : &1,500 JPY - 毎年</option>
 </select> </td></tr>
 <tr><td><input type="hidden" name="on1" value="リリースメールの受け取り">リリースメールの受け取り</td></tr><tr><td><select name="os1">
