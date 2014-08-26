@@ -39,9 +39,13 @@ You can donate through Paypal. You can also donate with Amazon.co.jp/Amazon.com 
 ここでのプロジェクトは、みなさんの支援加速されます。
 Paypalから支援プランを購入できます。また、Amazonのほしい物リストからのプレゼントを
 受け付けています。
+Paypalでは、
+支援プランを選択して、クレジットカードで支払いができます。
+支援プランを購入された方には、Githubで開発しているソフトウエアの更新情報を
+不定期でメールでお届けします。メールの受領をしない場合は、オプション選択で
+メールを受け取らないを選択してください。
 
-* 支援プランを選択して、Paypalからクレジットカードで支払いを行い、
-リリース情報をメールを受け取る。
+<h3>リリース情報をメールを受け取る</h3>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -63,7 +67,7 @@ Paypalから支援プランを購入できます。また、Amazonのほしい�
 <img alt="" border="0" src="https://www.paypalobjects.com/ja_JP/i/scr/pixel.gif" width="1" height="1">
 </form>
 
-* 毎年継続的にプランを購入する場合は次からおこなってください。
+<h3> 毎年継続的にプランを購入する</h3>
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -86,6 +90,6 @@ Paypalから支援プランを購入できます。また、Amazonのほしい�
 </form>
 
 
-* Amazon.co.jpのほしい物リストからプレゼントする。
+<h3> Amazon.co.jpのほしい物リストからプレゼントする</h3>
 
 <a href="http://www.amazon.co.jp/registry/wishlist/2GWI2IL5MPQDA">Amazon.co.jpほしいものリスト</a>
