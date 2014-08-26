@@ -13,6 +13,8 @@ tagline: Supporting tagline
   {% endfor %}
 </ul>
 
+<h2> OpenSource Projects </h2>
+
 <h2> Presentations </h2>
 
 * <a href="slides/OSMFJ_2years_symposium_keynote.html">一般社団法人オープンストリートマップ・ファウンデーション・ジャパン２周年記念シンポジウム</a>
@@ -25,3 +27,65 @@ tagline: Supporting tagline
 * <a href="slides/2013-11-gis-lua-lt.html"> FOSS4G 2013/Tokyo, Day1 Panel discussion</a>
 * <a href="slides/2013-1102-tileman.html"> FOSS4G 2013/Tokyo, Day2 Tileman </a>
 
+
+<h2>Acceptance of Donations</h2>
+
+The projects here are powered by your donations.
+
+You can donate through Paypal. You can also donate with Amazon.co.jp/Amazon.com wish list.
+
+<h2>寄付の受付</h2>
+
+ここでのプロジェクトは、みなさんの支援加速されます。
+Paypalから支援プランを購入できます。また、Amazonのほしい物リストからのプレゼントを
+受け付けています。
+
+* 支援プランを選択して、Paypalからクレジットカードで支払いを行い、
+リリース情報をメールを受け取る。
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4G9NNC2BEQ4P4">
+<table>
+<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択</td></tr><tr><td><select name="os0">
+<option value="プラン5">プラン5 ¥500 JPY</option>
+<option value="プラン7">プラン7 ¥700 JPY</option>
+<option value="プラン10">プラン10 ¥1,000 JPY</option>
+<option value="プラン15">プラン15 ¥1,500 JPY</option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="リリースメールの受け取り">リリースメールの受け取り</td></tr><tr><td><select name="os1">
+<option value="受け取る">受け取る </option>
+<option value="受け取らない">受け取らない </option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="JPY">
+<input type="image" src="https://www.paypalobjects.com/ja_JP/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインでより安全・簡単にお支払い">
+<img alt="" border="0" src="https://www.paypalobjects.com/ja_JP/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+* 毎年継続的にプランを購入する場合は次からおこなってください。
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="9PA8259B7HCEN">
+<table>
+<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択</td></tr><tr><td><select name="os0">
+ <option value="プラン5">プラン5 : &500 JPY - 毎年</option>
+ <option value="プラン7">プラン7 : &700 JPY - 毎年</option>
+ <option value="プラン10">プラン10 : &1,000 JPY - 毎年</option>
+ <option value="プラン15">プラン15 : &1,500 JPY - 毎年</option>
+</select> </td></tr>
+<tr><td><input type="hidden" name="on1" value="リリースメールの受け取り">リリースメールの受け取り</td></tr><tr><td><select name="os1">
+ <option value="受け取る">受け取る </option>
+ <option value="受け取らない">受け取らない </option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="JPY">
+<input type="image" src="https://www.paypalobjects.com/ja_JP/JP/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインでより安全・簡単にお支払い">
+<img alt="" border="0" src="https://www.paypalobjects.com/ja_JP/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
+* Amazon.co.jpのほしい物リストからプレゼントする。
+
+<a href="http://www.amazon.co.jp/registry/wishlist/2GWI2IL5MPQDA">Amazon.co.jpほしいものリスト</a>
