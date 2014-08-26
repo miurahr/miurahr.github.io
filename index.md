@@ -13,7 +13,18 @@ tagline: Supporting tagline
   {% endfor %}
 </ul>
 
-<h2> OpenSource Projects </h2>
+<h2> Original OpenSource Projects </h2>
+
+* <a href="/unihandecode"> Unihandecode: python transliteration library</a>
+* <a href="/bluegnss4osm"> Bluetooth GNSS/GPS connector on Android for OpenStreetMap mappers</a>
+* <a href="http://osmfj.github.io/tileman"> TileMan: OpenStreetMap Tile distribution server</a>
+* <a href="https://github.com/miurahr/netradio_recorder">Net Radio Recorder script ネットラジオ・レコーダー(NHK)</a>
+
+<h2> Some Contributed Projects</h2>
+
+* <a href="https://github.com/adrahon/vagrant-kvm">Vagrant KVM provider</a>
+
+You can see activities on BlackDuck OpenHub; <a href="https://www.openhub.net/accounts/miurahr/positions">Hiroshi Miura positions</a>
 
 <h2> Presentations </h2>
 
