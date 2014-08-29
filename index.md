@@ -64,48 +64,27 @@ Paypalでは、
 
 <h3>リリース情報をメールを受け取る</h3>
 
+
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="4G9NNC2BEQ4P4">
 <table>
-<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択 one time plan</td></tr><tr><td><select name="os0">
-<option value="プラン5">プラン5 ¥500 JPY</option>
-<option value="プラン7">プラン7 ¥700 JPY</option>
-<option value="プラン10">プラン10 ¥1,000 JPY</option>
-<option value="プラン15">プラン15 ¥1,500 JPY</option>
+<tr><td><input type="hidden" name="on0" value="グレード">グレード</td></tr><tr><td><select name="os0">
+  <option value="Coke">Coke ¥100 JPY</option>
+  <option value="Coffee">Coffee ¥300 JPY</option>
+  <option value="Lunch">Lunch ¥500 JPY</option>
+  <option value="Wine">Wine ¥1,000 JPY</option>
 </select> </td></tr>
-<tr><td><input type="hidden" name="on1" value="リリースメールの受け取り">リリースメールの受け取り</td></tr><tr><td><select name="os1">
-<option value="受け取る">受け取る </option>
-<option value="受け取らない">受け取らない </option>
+<tr><td><input type="hidden" name="on1" value="リリースメール">リリースメール</td></tr><tr><td><select name="os1">
+  <option value="受け取る">受け取る </option>
+  <option value="受け取らない">受け取らない </option>
 </select> </td></tr>
+<tr><td><input type="hidden" name="on2" value="備考/メッセージ">備考/メッセージ</td></tr><tr><td><input type="text" name="os2" maxlength="200"></td></tr>
 </table>
 <input type="hidden" name="currency_code" value="JPY">
 <input type="image" src="https://www.paypalobjects.com/ja_JP/JP/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインでより安全・簡単にお支払い">
 <img alt="" border="0" src="https://www.paypalobjects.com/ja_JP/i/scr/pixel.gif" width="1" height="1">
 </form>
-
-<h3> 毎年継続的にプランを購入する</h3>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="9PA8259B7HCEN">
-<table>
-<tr><td><input type="hidden" name="on0" value="オプション選択">オプション選択 Yearly plan</td></tr><tr><td><select name="os0">
- <option value="プラン5">プラン5 : 500 JPY - 毎年</option>
- <option value="プラン7">プラン7 : 700 JPY - 毎年</option>
- <option value="プラン10">プラン10 : 1,000 JPY - 毎年</option>
- <option value="プラン15">プラン15 : &1,500 JPY - 毎年</option>
-</select> </td></tr>
-<tr><td><input type="hidden" name="on1" value="リリースメールの受け取り">リリースメールの受け取り</td></tr><tr><td><select name="os1">
- <option value="受け取る">受け取る </option>
- <option value="受け取らない">受け取らない </option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="JPY">
-<input type="image" src="https://www.paypalobjects.com/ja_JP/JP/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - オンラインでより安全・簡単にお支払い">
-<img alt="" border="0" src="https://www.paypalobjects.com/ja_JP/i/scr/pixel.gif" width="1" height="1">
-</form>
-
 
 <h3> Amazon.co.jpのほしい物リストからプレゼントする</h3>
 
