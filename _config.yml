@@ -9,13 +9,15 @@ pygments: true
 # so be sure to set them if your theme uses them.
 #
 title : Code reader's days
-tagline: Site Tagline
+tagline: FreeSoftware enthusiast
 author :
   name : Hiroshi Miura
   email : miurahr@linux.com
   email_md5: b987f912c0363a9e6431003cf948f7db
   github : miurahr
   twitter : miurahr
+  linkedin : miurahr
+  # pinterest : hoge
 #  feedburner : feedname
 
 # The production_url is only used when full-domain names are needed

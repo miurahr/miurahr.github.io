@@ -1,8 +1,7 @@
 ---
 layout: page
-title: Infrastructure codes
-tagline: Supporting tagline
-payments: true
+#title: Infrastructure codes
+#tagline: OpenSource enthuasist
 ---
 {% include JB/setup %}
 
