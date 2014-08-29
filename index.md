@@ -2,6 +2,7 @@
 layout: page
 title: Infrastructure codes
 tagline: Supporting tagline
+flattrable: true
 ---
 {% include JB/setup %}
 

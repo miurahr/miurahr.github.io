@@ -1,0 +1,13 @@
+<div id="flattr_button"></div>
+<script id='flattrbtn'>
+  var flattr_uid = 'flatter id'; // configure in _config.yml
+  (function(i){
+    var f,s=document.getElementById(i);
+    f=document.createElement('iframe');
+    f.src='//api.flattr.com/button/view/?uid=' + flattr_uid + '&url='+encodeURIComponent(document.URL);
+    f.title='Flattr';
+    f.height=62;
+    f.width=55;
+    f.style.borderWidth=0;
+    s.parentNode.insertBefore(f,s);})('flattrbtn');
+</script>

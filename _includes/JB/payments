@@ -1,0 +1,8 @@
+{% if site.JB.payments.provider and page.payments != false %}
+{% case site.JB.payments.provider %}
+{% when "paypal" %}
+  {% include JB/payments-providers/paypal %}
+{%; when "flattr" %}
+  {%; include JB/payments-providers/flattr %}
+{% endcase %}
+{% endif %}
