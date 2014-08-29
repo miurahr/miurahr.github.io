@@ -43,11 +43,13 @@ You can see activities on BlackDuck OpenHub; <a href="https://www.openhub.net/ac
 
 The projects here are powered by your donations.
 
-You can donate through Paypal. You can also donate with Amazon.co.jp/Amazon.com wish list.
+You can donate through Paypal and flattr.com. You can also donate with Amazon.co.jp/Amazon.com wish list.
 
 <a href="http://amzn.com/w/2ON42B9SWTF05"> Amazon.com Wish list</a>
 
 WARNING: I am living in Japan; it may be nessesary additional transportation fee.
+
+<script id='fbh50m8'>(function(i){var f,s=document.getElementById(i);f=document.createElement('iframe');f.src='//api.flattr.com/button/view/?uid=miurahr&url='+encodeURIComponent(document.URL);f.title='Flattr';f.height=62;f.width=55;f.style.borderWidth=0;s.parentNode.insertBefore(f,s);})('fbh50m8');</script>
 
 <h2>寄付の受付</h2>
 
@@ -108,3 +110,5 @@ Paypalでは、
 <h3> Amazon.co.jpのほしい物リストからプレゼントする</h3>
 
 <a href="http://www.amazon.co.jp/registry/wishlist/2GWI2IL5MPQDA">Amazon.co.jpほしいものリスト</a>
+
+
