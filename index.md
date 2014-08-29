@@ -54,16 +54,16 @@ WARNING: I am living in Japan; it may be nessesary additional transportation fee
 
 <h2>寄付の受付</h2>
 
-ここでのプロジェクトは、みなさんの支援加速されます。
+ここでのプロジェクトは、みなさんの支援で加速されます。
 Paypalから支援プランを購入できます。また、Amazonのほしい物リストからのプレゼントを
 受け付けています。
+
 Paypalでは、
 支援プランを選択して、クレジットカードで支払いができます。
-支援プランを購入された方には、Githubで開発しているソフトウエアの更新情報を
-不定期でメールでお届けします。メールの受領をしない場合は、オプション選択で
-メールを受け取らないを選択してください。
+登録された方には、プロジェクトの更新情報を
+不定期でメールでお届けします
 
-<h3>リリース情報をメールを受け取る</h3>
+<h3>メール受領で支援</h3>
 
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
