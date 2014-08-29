@@ -1,6 +1,6 @@
 <div id="flattr_button"></div>
 <script id='flattrbtn'>
-  var flattr_uid = 'flatter id'; // configure in _config.yml
+  var flattr_uid = 'miurahr'; // configure in _config.yml
   (function(i){
     var f,s=document.getElementById(i);
     f=document.createElement('iframe');

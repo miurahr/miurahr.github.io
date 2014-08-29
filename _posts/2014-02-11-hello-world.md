@@ -4,6 +4,6 @@ title: "Hello World"
 description: ""
 category: 
 tags: []
-flattrable: true
+payments: true
 ---
 {% include JB/setup %}
